@@ -1,14 +1,12 @@
 
-#include <mlx.h>
+#include "so_long.h"
 
-int	main(void)
+
+char f_j(char c)
 {
-	void	*mlx_ptr;
-	void	*win_ptr;
 
-	mlx_ptr = mlx_init();
-	win_ptr = mlx_new_window(mlx_ptr, 500 , 500 ,"mlx 77" );
-	mlx_loop(mlx_ptr);
-	return (0);
+	c='b';
+
+	return ('c');
 
 }

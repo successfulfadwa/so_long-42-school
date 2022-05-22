@@ -1,9 +1,9 @@
-SRC			= 	so_long.c main.c
+SRC			= 	main.c
 
 OBJ			=	${SRC:.c=.o}
 
 
-CC			=	gcc
+CC			=	cc
 
 CFLAGS 		=	-Wall -Werror -Wextra
 
@@ -13,14 +13,18 @@ LIBS		=	so_long.h
 
 NAME		=	solong
 
-MINILIBX	=	-I  /usr/local/include -g -L  /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
+MINILIBX	=	-I  /usr/local/include -L  /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
 all:	$(NAME)
 # $(SERVER)	: $(LIBS) $(OBJS_S)
 # 	$(CC) $(CFLAGS)  $(OBJS_S)  -o $(SERVER)
 
 $(NAME):	$(OBJ) $(LIBS)
-	$(CC) $(CFLAGS) $(OBJ)  ${MINILIBX}  -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -g ${MINILIBX}  -o $(NAME)
 
+# %.o: %.c $(LIBS)
+# 	$(CC) $(CFLAGS) -I -Imlx -c $< -o $@
 
-clean:
-	$(RM) $(OBJ)
+fclean:
+	$(RM) $(OBJ) $(NAME)
+
+re:			fclean $(OBJ) $(NAME) 

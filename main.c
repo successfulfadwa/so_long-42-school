@@ -27,7 +27,9 @@ int main()
     void *win = mlx_new_window(mlx, 1920 , 1080 , "Tutorial Window - Draw Line <3");
 	mlx_string_put ( mlx,win,1920/2, 1080/2, 0xFFB6C1 ,"good job <3 ");
 
-    draw_line(mlx, win, 1920/2, 1080/2, 400, 300, 0xFFB6C1);
+    draw_line(mlx, win, 500, 1080/2, 1500, 1080/2, 0xFFB6C1);
+	draw_line(mlx, win, 500,1080/2 ,1000, 1, 0xFFB6C1);
+	draw_line(mlx, win, 1500,1080/2 ,1000, 1, 0xFFB6C1);
 
     mlx_loop(mlx);
 }

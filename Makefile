@@ -5,7 +5,7 @@ OBJ			=	${SRC:.c=.o}
 
 CC			=	cc
 
-CFLAGS 		=	-Wall -Werror -Wextra
+CFLAGS 		=	-Wall -Werror -Wextra -g
 
 RM 			=	rm -f
 
@@ -21,8 +21,8 @@ all:	$(NAME)
 $(NAME):	$(OBJ) $(LIBS)
 	$(CC) $(CFLAGS) $(OBJ) -g ${MINILIBX}  -o $(NAME)
 
-# %.o: %.c $(LIBS)
-# 	$(CC) $(CFLAGS) -I -Imlx -c $< -o $@
+%.o: %.c $(LIBS)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 fclean:
 	$(RM) $(OBJ) $(NAME)

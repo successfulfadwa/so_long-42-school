@@ -1,35 +1,30 @@
 #include "so_long.h"
 #include <math.h>
 // #include <mlx.h>
-int draw_line(void *mlx, void *win, int beginX, int beginY, int endX, int endY, int color)
+int paint(void *mlx, void *win, int X, int Y, int color)
 {
-	double LEN_X = endX - beginX; // 10
-	double LEN_Y = endY - beginY;
-
-int pixels = sqrt((LEN_X* LEN_X) + (LEN_Y * LEN_Y));
-
-LEN_X= LEN_X/pixels; // 1
-LEN_Y = LEN_Y /pixels; // 0
-double pixelX = beginX;
-double pixelY = beginY;
-while (pixels)
+    int i =0;
+    int j=0;
+while(j<Y)
 {
-    mlx_pixel_put(mlx, win, pixelX, pixelY, color);
-    pixelX = pixelX+LEN_X;
-    pixelY = pixelY+LEN_Y;
-    --pixels;
+    mlx_pixel_put(mlx,win,i,j,color);
+	while(i<X )
+    {
+        mlx_pixel_put(mlx,win,i,j,color);
+        i++;
+    }
+    i=0;
+    j++;
 }
 return(0);
 }
 int main()
 {
     void *mlx = mlx_init();
-    void *win = mlx_new_window(mlx, 1920 , 1080 , "Tutorial Window - Draw Line <3");
-	mlx_string_put ( mlx,win,1920/2, 1080/2, 0xFFB6C1 ,"good job <3 ");
-
-    draw_line(mlx, win, 500, 1080/2, 1500, 1080/2, 0xFFB6C1);
-	draw_line(mlx, win, 500,1080/2 ,1000, 1, 0xFFB6C1);
-	draw_line(mlx, win, 1500,1080/2 ,1000, 1, 0xFFB6C1);
+    void *win = mlx_new_window(mlx, 1920 , 1080 , "PAINT MY BOARD WINDOW IN PINK HEHE <3");
+    paint(mlx, win, 1920,1080, 0xFFB6C1);
+	 mlx_string_put ( mlx,win,900, 1080/2, 0xE75480 ,"good job <3 ");
 
     mlx_loop(mlx);
+
 }

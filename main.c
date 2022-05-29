@@ -23,6 +23,11 @@
 // }
 // return(0);
 // }
+	int x;
+	int y;
+int x=100;
+int y=500;
+
 typedef struct	s_vars {
 	void	*mlx;
 	void	*win;
@@ -33,24 +38,36 @@ int	key_hook(int keycode, t_vars *fa)
 	void	*img;
 		int		img_width;
 	int		img_height;
-	
 	char	*relative_path = "./unicorn.xpm";
+	img = mlx_xpm_file_to_image(fa->mlx, relative_path, &img_width, &img_height);
 	if (keycode==124)
 	{
-	
-	img = mlx_xpm_file_to_image(fa->mlx, relative_path, &img_width, &img_height);
-              mlx_put_image_to_window(fa->mlx, fa->win, img,800, 500);
-	//  mlx_string_put(fa->mlx,fa->win,1,9,0xFFB6C1,"you did it <3");
+	x=x+100;
 	printf("Key pressed -> %d\n", keycode );
 	}
+	else if (keycode==123)
+	{
+	x=x-100;
+	printf("Key pressed -> %d\n", keycode );
+	}
+	else if (keycode==123)
+	{
+	x=x-100;
+	printf("Key pressed -> %d\n", keycode );
+	}
+	 mlx_put_image_to_window(fa->mlx, fa->win, img,x, y);
+	// mlx_string_put(fa->mlx,fa->win,1,9,0xFFB6C1,"you did it <3");
+
 	return (0);
 }
 
 int main()
 {
 	t_vars fa;
+
     fa.mlx = mlx_init();
-	  fa.win = mlx_new_window(fa.mlx, 1920 , 1080 , "PAINT MYunicornin xpm HEHE <3");
+	
+	  fa.win = mlx_new_window(fa.mlx, 2500 ,1377 , "PAINT MYunicornin xpm HEHE <3");
 	  mlx_key_hook(fa.win, key_hook, &fa);
     // paint(mlx, win, 1920,1080, create_trgb(100,0,45,255));
 //	 mlx_string_put ( mlx,win,900, 1080/2, 800000 ,"good job <3 ");

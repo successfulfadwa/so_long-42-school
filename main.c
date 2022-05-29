@@ -26,7 +26,7 @@
 	int x;
 	int y;
 int x=100;
-int y=500;
+int y=100;
 
 typedef struct	s_vars {
 	void	*mlx;
@@ -39,7 +39,9 @@ int	key_hook(int keycode, t_vars *fa)
 		int		img_width;
 	int		img_height;
 	char	*relative_path = "./unicorn.xpm";
+
 	img = mlx_xpm_file_to_image(fa->mlx, relative_path, &img_width, &img_height);
+	 mlx_clear_window (fa->mlx, fa->win);
 	if (keycode==124)
 	{
 	x=x+100;
@@ -50,9 +52,14 @@ int	key_hook(int keycode, t_vars *fa)
 	x=x-100;
 	printf("Key pressed -> %d\n", keycode );
 	}
-	else if (keycode==123)
+	else if (keycode==125)
 	{
-	x=x-100;
+	y=y+100;
+	printf("Key pressed -> %d\n", keycode );
+	}
+	else if (keycode==126)
+	{
+	y=y-100;
 	printf("Key pressed -> %d\n", keycode );
 	}
 	 mlx_put_image_to_window(fa->mlx, fa->win, img,x, y);

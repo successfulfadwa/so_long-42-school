@@ -6,6 +6,11 @@
 # include <unistd.h>
 # include <mlx.h>
 # include <stdio.h>
+
+# ifndef ANIMATION_FRAMES
+#  define ANIMATION_FRAMES 10
+# endif
+
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2

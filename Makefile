@@ -1,6 +1,7 @@
-SRC			= 	main.c
+SRC			=  read_map_fd.c so_long.c getnext_line/get_next_line_utils.c getnext_line/get_next_line.c main.c
 
-OBJ			=	${SRC:.c=.o}
+OBJ			=	$(addprefix obj/, ${SRC:.c=.o})
+# OBJ			=	${SRC:.c=.o}
 
 
 CC			=	cc
@@ -13,18 +14,26 @@ LIBS		=	so_long.h
 
 NAME		=	solong
 
-MINILIBX	=	-I  /usr/local/include -L  /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
+LIBRARY = libft/libft.a
+
+MINILIBX	=	-L  /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
 all:	$(NAME)
 # $(SERVER)	: $(LIBS) $(OBJS_S)
 # 	$(CC) $(CFLAGS)  $(OBJS_S)  -o $(SERVER)
 
-$(NAME):	$(OBJ) $(LIBS)
-	$(CC) $(CFLAGS) $(OBJ) -g ${MINILIBX}  -o $(NAME)
+$(NAME):$(LIBRARY)	$(OBJ) $(LIBS) 
+	$(CC) $(CFLAGS) $(LIBRARY) $(OBJ) -g ${MINILIBX}  -o $(NAME)
 
-%.o: %.c $(LIBS)
-	$(CC) $(CFLAGS) -c $< -o $@
+
+$(LIBRARY) : 
+	make -C libft
+obj/%.o: %.c 
+	@ mkdir -p obj/getnext_line 
+	$(CC)  -c $< -o $@
+
 
 fclean:
+	make fclean -C libft
 	$(RM) $(OBJ) $(NAME)
 
 re:			fclean $(OBJ) $(NAME) 

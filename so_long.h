@@ -6,6 +6,8 @@
 # include <unistd.h>
 # include <mlx.h>
 # include <stdio.h>
+# include "libft/libft.h"
+# include "getnext_line/get_next_line.h"
 
 # ifndef ANIMATION_FRAMES
 #  define ANIMATION_FRAMES 10
@@ -58,42 +60,28 @@
 # define KEY_DOWN 125
 # define KEY_UP 126
 
-typedef struct	s_vector
+typedef struct s_game
 {
-	int	x;
-	int	y;
-}				t_vector;
-
-/* A pointer to the window and its size */
-typedef struct	s_window {
-	void		*reference;
-	t_vector	size;
-}				t_window;
-
-/* The 4 values that define a color */
-typedef struct s_color {
-	int	r;
-	int g;
-	int b;
-	int a;
-}	t_color;
-
-/* all info needed for an image */
-typedef struct	s_image {
-	void		*reference;
-	t_vector	size;
-	char		*pixels;
-	int			bits_per_pixel;
-	int			line_size;
-	int			endian;
-}				t_image;
-
-typedef struct	s_program {
-	void		*mlx;
-	t_window	window;
-	t_image		sprite;
-	t_vector	sprite_position;
-}				t_program;
+	void	*mlx;
+	void	*win;
+	char	**map;
+	void	*img_backg;
+	void	*img_wall;
+	void	*img_player;
+	void	*img_colect;
+	void	*img_exit;
+	int		map_w;
+	int		map_h;
+	int		img_w;
+	int		img_h;
+	int		n_colect;
+	int		n_player;
+	int		n_exit;
+	int		x_player;
+	int		y_player;
+	int		moves;
+	int		endgame;
+}	t_game;
 
 char			f_j(char c);
 

@@ -1,4 +1,5 @@
-SRC			=  read_map_fd.c so_long.c getnext_line/get_next_line_utils.c getnext_line/get_next_line.c main.c
+SRC			=	getnext_line/get_next_line_utils.c getnext_line/get_next_line.c \
+	draw.c	exit_game.c	gameplay.c	init.c	map_validate.c player_update.c	read_map.c	so_long.c
 
 OBJ			=	$(addprefix obj/, ${SRC:.c=.o})
 # OBJ			=	${SRC:.c=.o}

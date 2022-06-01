@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvaz-fe <igvaz-fe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:50:27 by igvaz-fe          #+#    #+#             */
-/*   Updated: 2021/10/01 18:50:28 by igvaz-fe         ###   ########.fr       */
+/*   Updated: 2022/06/01 10:00:27 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	exit_draw(t_game *game, int x, int y)
 	{
 		mlx_destroy_image(game->mlx, game->img_exit);
 		game->img_exit = mlx_xpm_file_to_image
-			(game->mlx, "assets/images/E2.xpm", &game->img_w, &game->img_h);
+			(game->mlx, "door_open32.xpm", &game->img_w, &game->img_h);
 	}
 	img_draw(game, game->img_exit, x, y);
 }
@@ -61,5 +61,6 @@ int	map_draw(t_game *game)
 		}
 		y++;
 	}
+display_moves(game);
 	return (0);
 }

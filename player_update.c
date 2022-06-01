@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_update.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvaz-fe <igvaz-fe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:51:06 by igvaz-fe          #+#    #+#             */
-/*   Updated: 2021/10/02 23:46:43 by igvaz-fe         ###   ########.fr       */
+/*   Updated: 2022/06/01 10:46:53 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ static void	player_update_image(char key, t_game *game)
 	mlx_destroy_image(game->mlx, game->img_player);
 	if (key == 'w')
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "assets/images/PD.xpm", &game->img_w, &game->img_h);
+			(game->mlx, "TOP32.xpm", &game->img_w, &game->img_h);
 	else if (key == 's')
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "assets/images/PA.xpm", &game->img_w, &game->img_h);
+			(game->mlx, "DOWN32.xpm", &game->img_w, &game->img_h);
 	else if (key == 'd')
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "assets/images/PD.xpm", &game->img_w, &game->img_h);
+			(game->mlx, "LIMN32.xpm", &game->img_w, &game->img_h);
 	else if (key == 'a')
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "assets/images/PA.xpm", &game->img_w, &game->img_h);
+			(game->mlx, "LISR32.xpm", &game->img_w, &game->img_h);
 }
 
 void	player_w(t_game *game)

@@ -6,6 +6,7 @@
 # include <unistd.h>
 # include <mlx.h>
 # include <stdio.h>
+# include <fcntl.h>
 # include "libft/libft.h"
 # include "getnext_line/get_next_line.h"
 
@@ -42,17 +43,18 @@
 # define KEY_ESC 53
 # define KEY_Q 12
 
+
 typedef struct s_game
 {
 	void	*mlx;
 	void	*win;
 	char	**map;
-	void	*img_enemie;
 	void	*img_backg;
 	void	*img_wall;
 	void	*img_player;
 	void	*img_colect;
 	void	*img_exit;
+	void	*img_enemie;
 	int		map_w;
 	int		map_h;
 	int		img_w;
@@ -64,6 +66,8 @@ typedef struct s_game
 	int		y_player;
 	int		moves;
 	int		endgame;
+	int		pos_enemies;
+	int		loop;
 }	t_game;
 
 void	img_draw(t_game *game, void *image, int x, int y);
@@ -77,6 +81,9 @@ void	player_d(t_game *game);
 void	player_s(t_game *game);
 void	player_a(t_game *game);
 int		exit_game(t_game *game);
+void	display_moves(t_game *game);
+int		animation(t_game *game);
 void	free_map(char **map);
+void	tombstone_draw(t_game *game);
 
 #endif

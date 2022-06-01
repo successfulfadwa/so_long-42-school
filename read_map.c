@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvaz-fe <igvaz-fe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:51:11 by igvaz-fe          #+#    #+#             */
-/*   Updated: 2021/10/01 18:51:12 by igvaz-fe         ###   ########.fr       */
+/*   Updated: 2022/06/01 10:03:31 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	**read_map(char *path)
+	char	**read_map(char *path)
 {
 	int		fd;
 	char	*line;

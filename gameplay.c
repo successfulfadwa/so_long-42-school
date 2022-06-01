@@ -6,7 +6,7 @@
 /*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:50:40 by igvaz-fe          #+#    #+#             */
-/*   Updated: 2022/05/31 08:52:42 by faljaoui         ###   ########.fr       */
+/*   Updated: 2022/06/01 09:44:56 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void	game_events(int keycode, t_game *game)
 	printf("%d\n",keycode);
 	if (keycode == KEY_W || keycode == KEY_UP)
 	{
+
 		game->y_player -= 1;
 		player_w(game);
 	}

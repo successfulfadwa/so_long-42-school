@@ -6,7 +6,7 @@
 /*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:50:35 by igvaz-fe          #+#    #+#             */
-/*   Updated: 2022/06/01 09:44:27 by faljaoui         ###   ########.fr       */
+/*   Updated: 2022/06/02 07:20:44 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	exit_game(t_game *game)
 	mlx_destroy_image(game->mlx, game->img_player);
 	mlx_destroy_image(game->mlx, game->img_colect);
 	mlx_destroy_image(game->mlx, game->img_exit);
+	mlx_destroy_image(game->mlx, game->img_star);
 	mlx_destroy_window(game->mlx, game->win);
-	//mlx_destroy_display(game->mlx);
 	free(game->mlx);
 	exit(0);
 	return (0);

@@ -1,0 +1,30 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/faljaoui/Desktop/so_long'
+make -C libft
+ 
+mkdir -p obj/getnext_line 
+cc  -c getnext_line/get_next_line_utils.c -o obj/getnext_line/get_next_line_utils.o
+mkdir -p obj/getnext_line 
+cc  -c getnext_line/get_next_line.c -o obj/getnext_line/get_next_line.o
+mkdir -p obj/getnext_line 
+cc  -c draw.c -o obj/draw.o
+mkdir -p obj/getnext_line 
+cc  -c exit_game.c -o obj/exit_game.o
+mkdir -p obj/getnext_line 
+cc  -c gameplay.c -o obj/gameplay.o
+mkdir -p obj/getnext_line 
+cc  -c init.c -o obj/init.o
+ 
+mkdir -p obj/getnext_line 
+cc  -c map_validate.c -o obj/map_validate.o
+mkdir -p obj/getnext_line 
+cc  -c player_update.c -o obj/player_update.o
+mkdir -p obj/getnext_line 
+cc  -c read_map.c -o obj/read_map.o
+mkdir -p obj/getnext_line 
+cc  -c so_long.c -o obj/so_long.o
+mkdir -p obj/getnext_line 
+cc  -c move.c -o obj/move.o
+cc -Wall -Werror -Wextra -g libft/libft.a obj/getnext_line/get_next_line_utils.o obj/getnext_line/get_next_line.o obj/draw.o obj/exit_game.o obj/gameplay.o obj/init.o obj/map_validate.o obj/player_update.o obj/read_map.o obj/so_long.o obj/move.o -g -L  /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit  -o solong
+make: Leaving directory `/Users/faljaoui/Desktop/so_long'
+ 

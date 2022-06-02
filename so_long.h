@@ -49,6 +49,8 @@ typedef struct s_game
 	void	*mlx;
 	void	*win;
 	char	**map;
+	int 	xcol;
+	int		ycol;
 	void	*img_backg;
 	void	*img_wall;
 	void	*img_player;
@@ -84,8 +86,10 @@ void	player_a(t_game *game);
 int		exit_game(t_game *game);
 void	display_moves(t_game *game);
 int		ft_update (t_game *game ,void *image,void *image2, int x , int y);
+int		ft_update2 (t_game *game);
 int		animation(t_game *game);
 void	free_map(char **map);
 void	tombstone_draw(t_game *game);
+void	get_collet(t_game *game,int  x, int y);
 
 #endif

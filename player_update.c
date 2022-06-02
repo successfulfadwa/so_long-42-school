@@ -6,7 +6,7 @@
 /*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:51:06 by igvaz-fe          #+#    #+#             */
-/*   Updated: 2022/06/01 10:46:53 by faljaoui         ###   ########.fr       */
+/*   Updated: 2022/06/02 07:27:54 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	player_w(t_game *game)
 		game->moves++;
 		game->endgame = 1;
 		map_draw(game);
+		exit_game(game);
 	}
 	else if (game->map[game->y_player][game->x_player] == '1'
 			|| game->map[game->y_player][game->x_player] == 'E')
@@ -67,6 +68,7 @@ void	player_s(t_game *game)
 		game->moves++;
 		game->endgame = 1;
 		map_draw(game);
+		exit_game(game);
 	}
 	else if (game->map[game->y_player][game->x_player] == '1'
 			|| game->map[game->y_player][game->x_player] == 'E')
@@ -93,7 +95,7 @@ void	player_d(t_game *game)
 		game->map[game->y_player][game->x_player - 1] = '0';
 		game->moves++;
 		game->endgame = 1;
-		map_draw(game);
+		exit_game(game);
 	}
 	else if (game->map[game->y_player][game->x_player] == '1'
 			|| game->map[game->y_player][game->x_player] == 'E')
@@ -121,6 +123,7 @@ void	player_a(t_game *game)
 		game->moves++;
 		game->endgame = 1;
 		map_draw(game);
+		exit_game(game);
 	}
 	else if (game->map[game->y_player][game->x_player] == '1'
 			|| game->map[game->y_player][game->x_player] == 'E')

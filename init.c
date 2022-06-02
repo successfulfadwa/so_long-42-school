@@ -6,7 +6,7 @@
 /*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:50:50 by igvaz-fe          #+#    #+#             */
-/*   Updated: 2022/06/02 08:28:27 by faljaoui         ###   ########.fr       */
+/*   Updated: 2022/06/02 15:30:09 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,4 @@ void	game_init(t_game *game)
 	game->endgame = 0;
 	img_init(game);
 	map_draw(game);
-	
 }
-

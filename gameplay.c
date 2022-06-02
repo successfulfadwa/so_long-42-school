@@ -6,14 +6,13 @@
 /*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:50:40 by igvaz-fe          #+#    #+#             */
-/*   Updated: 2022/06/02 07:17:58 by faljaoui         ###   ########.fr       */
+/*   Updated: 2022/06/02 15:37:20 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-
-void get_collet(t_game *game,int  x, int y)
+void	get_collet(t_game *game, int x, int y)
 {
 	game->xcol = x;
 	game->ycol = y;
@@ -22,10 +21,8 @@ void get_collet(t_game *game,int  x, int y)
 
 static void	game_events(int keycode, t_game *game)
 {
-	// printf("%d\n",keycode);
 	if (keycode == KEY_W || keycode == KEY_UP)
 	{
-
 		game->y_player -= 1;
 		player_w(game);
 	}
@@ -61,7 +58,7 @@ static int	keypress(int keycode, t_game *game)
 void	gameplay(t_game *game)
 {
 	mlx_loop_hook(game->mlx, ft_update2, game);
-	mlx_hook(game->win, 2, 1L << 0, keypress, game);
-	mlx_hook(game->win, 17, 1L << 17, exit_game, game);
-	mlx_hook(game->win, 9, 1L << 21, map_draw, game);
+	mlx_hook(game->win, 2, 0, keypress, game);
+	mlx_hook(game->win, 17, 0, exit_game, game);
+	mlx_hook(game->win, 9, 0, map_draw, game);
 }

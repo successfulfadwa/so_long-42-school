@@ -6,7 +6,7 @@
 /*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 13:20:06 by faljaoui          #+#    #+#             */
-/*   Updated: 2022/06/02 15:24:48 by faljaoui         ###   ########.fr       */
+/*   Updated: 2022/06/02 17:46:10 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	display_moves(t_game *game)
 
 	str = ft_itoa(game->moves);
 	mlx_string_put(game->mlx, game->win, 10, game->map_h - 30,
-		0xFFFFFF, "MOVES: ");
-	mlx_string_put(game->mlx, game->win, 90, game->map_h - 30, 0xFFFFFF, str);
+		0xFF6EC7, "MOVES: ");
+	mlx_string_put(game->mlx, game->win, 90, game->map_h - 30, 0xFF6EC7, str);
 	free(str);
 }
 

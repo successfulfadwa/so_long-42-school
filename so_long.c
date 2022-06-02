@@ -6,7 +6,7 @@
 /*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:51:18 by igvaz-fe          #+#    #+#             */
-/*   Updated: 2022/06/02 16:11:09 by faljaoui         ###   ########.fr       */
+/*   Updated: 2022/06/02 17:30:55 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ int	main(int argc, char **argv)
 		{
 			if (game.map)
 				free_map(game.map);
-			printf("Error\nInvalid Map");
+			ft_printf("Error\nInvalid Map");
 			exit(1);
 		}
 	}
 	else
 	{
-		printf("Error\nInvalid Sytax");
+		ft_printf("Error\nInvalid Sytax");
 		exit(1);
 	}
 	return (0);

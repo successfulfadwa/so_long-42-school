@@ -6,7 +6,7 @@
 /*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:50:56 by igvaz-fe          #+#    #+#             */
-/*   Updated: 2022/06/01 09:56:46 by faljaoui         ###   ########.fr       */
+/*   Updated: 2022/06/02 07:58:34 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ static int	is_validate(char **map)
 		while (map[i][j] != '\0')
 		{
 			if (map[i][j] != 'P' && map[i][j] != 'E' && map[i][j] != 'C'
-				&& map[i][j] != '0' && map[i][j] != '1')
+				&& map[i][j] != '0' && map[i][j] != '1'&& map[i][j]!='K')
 				return (0);
 			j++;
 		}

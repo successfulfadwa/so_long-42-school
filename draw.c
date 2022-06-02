@@ -6,7 +6,7 @@
 /*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:50:27 by igvaz-fe          #+#    #+#             */
-/*   Updated: 2022/06/02 07:25:18 by faljaoui         ###   ########.fr       */
+/*   Updated: 2022/06/02 10:44:15 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,13 @@ int	ft_update2 (t_game *game)
 	// a static that saves how many frames have passed
 	static int	frame;
 	static int	i;
+	static int	time_to_exit;
 	// add a frame and every x frames change the position by 1 pixel
 	// so it looks like its animated
+	if (game->endgame == 1 && time_to_exit != 20000)
+		time_to_exit++;
+	if (time_to_exit == 20000)
+		exit_game(game);
 	frame++;
 	if (frame  % 4273  == 0 && game->n_colect != 0)
 	{
@@ -66,7 +71,6 @@ int	map_draw(t_game *game)
 {
 	int	y;
 	int	x;
-
 	y = 0;
 	while (game->map[y])
 	{
@@ -83,6 +87,8 @@ int	map_draw(t_game *game)
 				get_collet(game, x, y);
 			else if (game->map[y][x] == 'E')
 				exit_draw(game, x, y);
+			else if (game->map[y][x] == 'K')
+				img_draw(game,game->img_enemie, x, y);
 			x++;
 		}
 		y++;

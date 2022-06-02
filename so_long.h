@@ -11,7 +11,7 @@
 # include "getnext_line/get_next_line.h"
 
 # ifndef ANIMATION_FRAMES
-#  define ANIMATION_FRAMES 10
+#  define ANIMATION_FRAMES 1
 # endif
 
 
@@ -54,6 +54,7 @@ typedef struct s_game
 	void	*img_player;
 	void	*img_colect;
 	void	*img_exit;
+	void	*img_star;
 	void	*img_enemie;
 	int		map_w;
 	int		map_h;
@@ -82,6 +83,7 @@ void	player_s(t_game *game);
 void	player_a(t_game *game);
 int		exit_game(t_game *game);
 void	display_moves(t_game *game);
+int		ft_update (t_game *game ,void *image,void *image2, int x , int y);
 int		animation(t_game *game);
 void	free_map(char **map);
 void	tombstone_draw(t_game *game);

@@ -6,7 +6,7 @@
 /*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:50:27 by igvaz-fe          #+#    #+#             */
-/*   Updated: 2022/06/01 10:00:27 by faljaoui         ###   ########.fr       */
+/*   Updated: 2022/06/02 05:20:10 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,28 @@ static void	exit_draw(t_game *game, int x, int y)
 	}
 	img_draw(game, game->img_exit, x, y);
 }
+int	ft_update (t_game *game ,void *image,void *image2, int x , int y)
+{
+	// a static that saves how many frames have passed
+	static int	frame;
+
+	// add a frame and every x frames change the position by 1 pixel
+	// so it looks like its animated
+	frame++;
+	if (frame == ANIMATION_FRAMES)
+		mlx_put_image_to_window(game->mlx, game->win, image2, x * 32, y * 32);
+	// every x*2 frames go back that pixel to loop the animation
+	else if (frame >= ANIMATION_FRAMES)
+	{
+		
+	mlx_put_image_to_window(game->mlx, game->win, image, x * 32, y * 32);
+		frame = 0;
+	}
+
+
+	return (0);
+
+}
 
 int	map_draw(t_game *game)
 {
@@ -54,7 +76,7 @@ int	map_draw(t_game *game)
 			else if (game->map[y][x] == 'P')
 				player_draw(game, game->img_player, x, y);
 			else if (game->map[y][x] == 'C')
-				img_draw(game, game->img_colect, x, y);
+				ft_update(game, game->img_colect,game->img_star, x, y);
 			else if (game->map[y][x] == 'E')
 				exit_draw(game, x, y);
 			x++;

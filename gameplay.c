@@ -6,7 +6,7 @@
 /*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:50:40 by igvaz-fe          #+#    #+#             */
-/*   Updated: 2022/06/01 09:44:56 by faljaoui         ###   ########.fr       */
+/*   Updated: 2022/06/02 04:10:39 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ static int	keypress(int keycode, t_game *game)
 
 void	gameplay(t_game *game)
 {
+	mlx_loop_hook(game->mlx, *ft_update, &game);
 	mlx_hook(game->win, 2, 1L << 0, keypress, game);
 	mlx_hook(game->win, 17, 1L << 17, exit_game, game);
 	mlx_hook(game->win, 9, 1L << 21, map_draw, game);

@@ -6,7 +6,7 @@
 /*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:50:50 by igvaz-fe          #+#    #+#             */
-/*   Updated: 2022/06/01 10:48:26 by faljaoui         ###   ########.fr       */
+/*   Updated: 2022/06/02 05:09:38 by faljaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static void	img_init(t_game *game)
 		(game->mlx, "potion32.xpm", &game->img_w, &game->img_h);
 	game->img_exit = mlx_xpm_file_to_image
 		(game->mlx, "doorclose32.xpm", &game->img_w, &game->img_h);
+	game->img_star = mlx_xpm_file_to_image
+		(game->mlx, "star_potion32.xpm", &game->img_w, &game->img_h);
 	
 }
 

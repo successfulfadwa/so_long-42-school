@@ -1,5 +1,5 @@
 SRC			=	getnext_line/get_next_line_utils.c getnext_line/get_next_line.c \
-	draw.c	exit_game.c	gameplay.c	init.c	map_validate.c player_update.c	read_map.c	so_long.c move.c animation_bonus.c
+	draw.c	exit_game.c	gameplay.c	init.c	map_validate.c player_update.c	read_map.c	so_long.c move.c 
 
 OBJ			=	$(addprefix obj/, ${SRC:.c=.o})
 # OBJ			=	${SRC:.c=.o}

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "so_long.h"
 
 static void	img_init(t_game *game)
 {
@@ -24,13 +24,8 @@ static void	img_init(t_game *game)
 		(game->mlx, "xpmfile/potion32.xpm", &game->img_w, &game->img_h);
 	game->img_exit = mlx_xpm_file_to_image
 		(game->mlx, "xpmfile/doorclose32.xpm", &game->img_w, &game->img_h);
-	game->img_star = mlx_xpm_file_to_image
-		(game->mlx, "xpmfile/star_potion32.xpm", &game->img_w, &game->img_h);
-	game->img_enemie = mlx_xpm_file_to_image
-		(game->mlx, "xpmfile/enemie_cat32.xpm", &game->img_w, &game->img_h);
 	if (!game->img_backg || !game->img_wall || !game->img_player
-		||!game->img_colect || !game->img_exit || !game->img_star
-		|| !game->img_enemie)
+		||!game->img_colect || !game->img_exit )
 	{
 		ft_printf("Error\n");
 		exit(EXIT_FAILURE);
@@ -45,7 +40,7 @@ static void	size_window_init(t_game *game)
 	i = 0;
 	while (game->map[i] != 0)
 		i++;
-	game->map_h = i * 32 + 32;
+	game->map_h = i * 32;
 }
 
 void	game_init(t_game *game)

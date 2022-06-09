@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include"so_long.h"
 
 void	img_draw(t_game *game, void *image, int x, int y)
 {
@@ -40,34 +40,8 @@ static void	exit_draw(t_game *game, int x, int y)
 	}
 	img_draw(game, game->img_exit, x, y);
 }
-int	ft_update2(t_game *game)
-{
-	static int	frame;
-	static int	i;
-	static int	time_to_exit;
 
-	if (game->endgame == 1 && time_to_exit != 20000)
-		time_to_exit++;
-	if (time_to_exit == 20000)
-		exit_game(game);
-	frame++;
-	if (frame % 4273 == 0 && game->n_colect != 0)
-	{
-		if (i == 0)
-		{
-			mlx_put_image_to_window(game->mlx, game->win,
-				game->img_star, game->xcol * 32, game->ycol * 32);
-			i = 1;
-		}
-		else
-		{
-			mlx_put_image_to_window(game->mlx, game->win,
-				game->img_colect, game->xcol * 32, game->ycol * 32);
-			i = 0;
-		}
-	}
-	return (0);
-}
+
 
 int	map_draw(t_game *game)
 {
@@ -90,10 +64,8 @@ int	map_draw(t_game *game)
 				get_collet(game, x, y);
 			else if (game->map[y][x] == 'E')
 				exit_draw(game, x, y);
-			else if (game->map[y][x] == 'K')
-				img_draw(game, game->img_enemie, x, y);
 		}
 		y++;
 	}
-	return (display_moves(game),0);
+	return ( 0);
 }

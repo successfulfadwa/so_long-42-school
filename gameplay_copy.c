@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include"so_long.h"
 
 void	get_collet(t_game *game, int x, int y)
 {
@@ -57,7 +57,6 @@ static int	keypress(int keycode, t_game *game)
 
 void	gameplay(t_game *game)
 {
-	mlx_loop_hook(game->mlx, ft_update2, game);
 	mlx_hook(game->win, 2, 0, keypress, game);
 	mlx_hook(game->win, 17, 0, exit_game, game);
 	mlx_hook(game->win, 9, 0, map_draw, game);

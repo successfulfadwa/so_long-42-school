@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "so_long.h"
 
 static void	player_update_image(char key, t_game *game)
 {
@@ -46,8 +46,6 @@ void	player_w(t_game *game)
 		map_draw(game);
 		exit_game(game);
 	}
-	else if (game->map[game->y_player][game->x_player] == 'K')
-		tombstone_draw(game);
 	else if (game->map[game->y_player][game->x_player] == '1'
 			|| game->map[game->y_player][game->x_player] == 'E')
 		game->y_player += 1;
@@ -75,8 +73,6 @@ void	player_s(t_game *game)
 		map_draw(game);
 		exit_game(game);
 	}
-	else if (game->map[game->y_player][game->x_player] == 'K')
-		tombstone_draw(game);
 	else if (game->map[game->y_player][game->x_player] == '1'
 			|| game->map[game->y_player][game->x_player] == 'E')
 		game->y_player -= 1;
@@ -103,8 +99,6 @@ void	player_d(t_game *game)
 		game->moves++;
 		exit_game(game);
 	}
-	else if (game->map[game->y_player][game->x_player] == 'K')
-		tombstone_draw(game);
 	else if (game->map[game->y_player][game->x_player] == '1'
 			|| game->map[game->y_player][game->x_player] == 'E')
 		game->x_player -= 1;
@@ -132,8 +126,6 @@ void	player_a(t_game *game)
 		map_draw(game);
 		exit_game(game);
 	}
-	else if (game->map[game->y_player][game->x_player] == 'K')
-		tombstone_draw(game);
 	else if (game->map[game->y_player][game->x_player] == '1'
 			|| game->map[game->y_player][game->x_player] == 'E')
 		game->x_player += 1;

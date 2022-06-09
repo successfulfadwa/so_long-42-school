@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include"so_long.h"
 
 static int	is_retangular(char **map)
 {
@@ -96,7 +96,7 @@ static int	is_validate(char **map)
 		while (map[i][j] != '\0')
 		{
 			if (map[i][j] != 'P' && map[i][j] != 'E' && map[i][j] != 'C'
-				&& map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'K')
+				&& map[i][j] != '0' && map[i][j] != '1')
 				return (0);
 			j++;
 		}
